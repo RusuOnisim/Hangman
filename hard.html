@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="ufo.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One&display=swap"
+    />
+    <meta
+      name="description"
+      content="Experience a space-themed hangman game with aliens and sheep! Test your word-guessing skills against extraterrestrial beings and fluffy farmyard friends. Play now and see if you can crack the code in this cosmic word puzzle adventure."
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Breaker</title>
+    <script type="module" crossorigin src="/hangman/assets/hard-1b15b3da.js"></script>
+    <link rel="modulepreload" crossorigin href="/hangman/assets/style-29a1522f.js">
+    <link rel="modulepreload" crossorigin href="/hangman/assets/updategame-8faffae8.js">
+    <link rel="stylesheet" href="/hangman/assets/style-813068c6.css">
+  </head>
+  <body>
+    <div class="overlayhint">
+      <div class="lay">
+        <div class="about">
+          Save the Sheep from Aliens, you have three lives to guess the hidden
+          word and prevent aliens from abducting innocent sheep.
+        </div>
+        <div class="hinttxt">
+          <b>Hint</b>: It's a term commonly used in the medical field
+        </div>
+      </div>
+    </div>
+    <div class="overlaywin">
+      <div class="gameover">
+        <div class="gametxt">Game Over</div>
+        <div class="gif">
+          <img
+            id="wingif"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c35322cf-1698-4a13-9d7a-ee3403e30d26/dc40si5-90f081df-9fae-4787-a50f-914da363ee90.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MzNTMyMmNmLTE2OTgtNGExMy05ZDdhLWVlMzQwM2UzMGQyNlwvZGM0MHNpNS05MGYwODFkZi05ZmFlLTQ3ODctYTUwZi05MTRkYTM2M2VlOTAuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.SMtLYEtTFtLKHo_xiRD582sbXGswxzFw1zpyAvtP5T0"
+            alt=""
+          />
+        </div>
+        <div id="message"></div>
+        <a href="hard.html"> <div class="reset">Reset</div></a>
+      </div>
+    </div>
+    <div class="overlaylose">
+      <div class="gameover">
+        <div class="gametxt">Game Over</div>
+        <div class="gif">
+          <img
+            id="losegif"
+            id="wingif"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b2a35c1-916a-442d-9455-e83e3d39a075/d9vexe8-7df6dd55-d24f-441e-b1d2-b27516c04879.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiMmEzNWMxLTkxNmEtNDQyZC05NDU1LWU4M2UzZDM5YTA3NVwvZDl2ZXhlOC03ZGY2ZGQ1NS1kMjRmLTQ0MWUtYjFkMi1iMjc1MTZjMDQ4NzkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.g7UXsqxklUCzD2PmF7KZgQg2pJyQhISyiRb45aDdjTM"
+            alt=""
+          />
+        </div>
+        <div id="message1"></div>
+        <a href="hard.html"> <div class="reset">Reset</div></a>
+      </div>
+    </div>
+    <div class="animation">
+      <a id="homelink" href="menu.html">
+        <img class="homeimg" src="home.png" alt="home" />
+      </a>
+      <div class="lives">
+        <button class="buttonhints" id="testButton">
+          <img id="imghint" src="hint.png" alt="buttonhint" />
+        </button>
+        <p>Lives</p>
+        <img id="live1" src="ufo.png" alt="" /><img
+          id="live2"
+          src="ufo.png"
+          alt=""
+        /><img id="live3" src="ufo.png" alt="" />
+      </div>
+      <div class="textgame">
+        <div id="word-display"></div>
+        <div id="letters">
+          <button class="letter-button">A</button>
+          <button class="letter-button">B</button>
+          <button class="letter-button">C</button>
+          <button class="letter-button">D</button>
+          <button class="letter-button">E</button>
+          <button class="letter-button">F</button>
+          <button class="letter-button">G</button>
+          <button class="letter-button">H</button>
+          <button class="letter-button">I</button>
+          <button class="letter-button">J</button>
+          <button class="letter-button">K</button>
+          <button class="letter-button">L</button>
+          <button class="letter-button">M</button>
+          <button class="letter-button">N</button>
+          <button class="letter-button">O</button>
+          <button class="letter-button">P</button>
+          <button class="letter-button">Q</button>
+          <button class="letter-button">R</button>
+          <button class="letter-button">S</button>
+          <button class="letter-button">T</button>
+          <button class="letter-button">U</button>
+          <button class="letter-button">V</button>
+          <button class="letter-button">W</button>
+          <button class="letter-button">X</button>
+          <button class="letter-button">Y</button>
+          <button class="letter-button">Z</button>
+        </div>
+      </div>
+      <div class="anime">
+        <div class="sheep1">
+          <img class="sheep" src="/hangman/assets/sheep-b0cb2e46.png" alt="sheep" />
+        </div>
+        <div class="ufo1">
+          <img class="ufo" src="/hangman/assets/ufo-635cd11e.png" alt="ufo" />
+          <div class="ufolight ufolight-gradient"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="background">
+        <div class="page">
+          <div class="grid-paper"></div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
