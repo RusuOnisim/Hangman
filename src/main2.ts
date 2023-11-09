@@ -1,17 +1,12 @@
-import { checkGuess } from './check';
-import { displayInitialWord } from './check';
-import { updateWordDisplay } from './check';
-import { checkWin } from './check'
-import { chosenWord } from './check';
+import './style.css';
+import { checkGuess } from './check2';
+import { displayInitialWord } from './check2';
+import { updateWordDisplay } from './check2';
+import { checkWin } from './check2'
+import { chosenWord } from './check2';
 let guessedWord: string[] = Array(chosenWord.length).fill('_');
 let gameover: boolean = false;
 const letterButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.letter-button');
-const startGameButton = document.getElementById('Start') as HTMLButtonElement | null;
-if (startGameButton) {
-  startGameButton.addEventListener('click', () => {
-    window.location.href = 'menu.html';
-  });
-}
 letterButtons.forEach((button: HTMLButtonElement) => {
   button.addEventListener('click', () => {
     const letter: string = button.textContent || "";
@@ -26,7 +21,7 @@ letterButtons.forEach((button: HTMLButtonElement) => {
   });
 });
 
-updateWordDisplay();
+updateWordDisplay() ;
 
 displayInitialWord();
 const container = document.querySelector('.overlayhint') as HTMLDivElement;

@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <link rel="icon" href="ufo.png" type="image/png">
-    <link rel="stylesheet" href="./src/style.css" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
@@ -12,10 +17,18 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Chewy|Fredoka+One&display=swap"
     />
-    <meta name="description" content="Experience a space-themed hangman game with aliens and sheep! Test your word-guessing skills against extraterrestrial beings and fluffy farmyard friends. Play now and see if you can crack the code in this cosmic word puzzle adventure.">
+    <meta
+      name="description"
+      content="Experience a space-themed hangman game with aliens and sheep! Test your word-guessing skills against extraterrestrial beings and fluffy farmyard friends. Play now and see if you can crack the code in this cosmic word puzzle adventure."
+    />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Breaker</title>
+    <script type="module" crossorigin src="/hangman/assets/medium-60c97a54.js"></script>
+    <link rel="modulepreload" crossorigin href="/hangman/assets/style-29a1522f.js">
+    <link rel="modulepreload" crossorigin href="/hangman/assets/updategame-8faffae8.js">
+    <link rel="stylesheet" href="/hangman/assets/style-813068c6.css">
   </head>
   <body>
     <div class="overlayhint">
@@ -25,7 +38,7 @@
           word and prevent aliens from abducting innocent sheep.
         </div>
         <div class="hinttxt">
-          <b>Hint</b>: The hidden word is related to computer sience.
+          <b>Hint</b>: The hidden word is related to animals.
         </div>
       </div>
     </div>
@@ -40,7 +53,7 @@
           />
         </div>
         <div id="message"></div>
-        <a href="game.html"> <div class="reset">Reset</div></a>
+        <a href="medium.html"> <div class="reset">Reset</div></a>
       </div>
     </div>
     <div class="overlaylose">
@@ -55,7 +68,7 @@
           />
         </div>
         <div id="message1"></div>
-        <a href="game.html"> <div class="reset">Reset</div></a>
+        <a href="medium.html"> <div class="reset">Reset</div></a>
       </div>
     </div>
     <div class="animation">
@@ -73,7 +86,6 @@
           alt=""
         /><img id="live3" src="ufo.png" alt="" />
       </div>
-
       <div id="message"></div>
       <div class="textgame">
         <div id="word-display"></div>
@@ -108,10 +120,10 @@
       </div>
       <div class="anime">
         <div class="sheep1">
-          <img class="sheep" src="public/sheep.png" alt="sheep" />
+          <img class="sheep" src="/hangman/assets/sheep-b0cb2e46.png" alt="sheep" />
         </div>
         <div class="ufo1">
-          <img class="ufo" src="public/ufo.png" alt="ufo" />
+          <img class="ufo" src="/hangman/assets/ufo-635cd11e.png" alt="ufo" />
           <div class="ufolight ufolight-gradient"></div>
         </div>
       </div>
@@ -123,6 +135,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="/src/main.ts"></script>
+    
   </body>
 </html>

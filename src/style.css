@@ -15,6 +15,15 @@ body {
   align-items: center;
   user-select: none;
 }
+
+@keyframes colorize {
+  from {
+    filter: grayscale(100%); 
+  }
+  to {
+    filter: grayscale(0%); 
+  }
+}
 .container {
   position: absolute;
   top: 0;
@@ -27,14 +36,13 @@ body {
   align-items: center;
   z-index: 999;
 }
-
 .container2 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -286,7 +294,7 @@ button.learn-more:active::before {
   overflow: hidden;
 }
 .anime {
-  padding-right: 30%;
+  padding-right: 15%;
   align-items: center;
   height: 100%;
   display: flex;
@@ -315,12 +323,11 @@ button.learn-more:active::before {
   }
 }
 
-
 .sheep {
   bottom: 5%;
   width: 80px;
   height: auto;
-  z-index:2;
+  z-index: 2;
   position: absolute;
   animation-delay: 10s;
 }
@@ -334,17 +341,17 @@ button.learn-more:active::before {
 }
 @keyframes opacityOn {
   0% {
-      opacity: 1;
+    opacity: 1;
   }
   50% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 .ufo1 {
-  padding-left: 35%;
+  padding-left: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -372,66 +379,402 @@ button.learn-more:active::before {
     rgba(255, 255, 255, 0) 100%
   );
 }
-
+a {
+  text-decoration: none;
+}
 #word-display {
   font-family: "Luckiest Guy", cursive;
-  padding-left: 35%;
-  letter-spacing: 15px;
-  font-size: 50px;
+  letter-spacing: 6px;
+  font-size: 30px;
   width: 100%;
+  position: absolute;
+  top: 10%;
 }
 #letters {
   z-index: 999;
   font-size: 30px;
   margin-top: 20px;
+  width: 50%;
 }
 .letter-button {
   display: inline-block;
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 3px solid #ccc;
   border-radius: 5px;
   font-size: 25px;
+  background-color: transparent;
 }
 
-.textgame{
-  width: 50%;
+.textgame {
+  padding-left: 5%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: space-evenly;
   position: absolute;
   top: 0;
-  left:0;
+  left: 0;
   height: 100%;
 }
-#message{
+.gameover {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   font-family: "Luckiest Guy", cursive;
-  font-size: 50px;
+  font-size: 20px;
   color: black;
-  height: 50px;
   position: absolute;
-  top:50%;
-  left: 50%;
-  z-index: 999;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 50vh;
+  width: 30vw;
+  text-align: center;
+  z-index: 1001;
+}
+.overlaywin,
+.overlaylose {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 1002;
+}
+#wingif,
+#losegif {
+  height: 100px;
+  width: auto;
+}
+.reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 120px;
+  background-color: #e91e63;
+  border-radius: 5px;
+  color: black;
+  font-weight: 700;
+  transition: 300ms;
+  border: black 4px solid;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+.homeimg {
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  height: 40px;
 }
 
-@media screen and (max-width: 768px) {
+#hint {
+  height: 40px;
+  padding-right: 50px;
+}
+#homelink {
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  height: 40px;
+  width: 40px;
+  display: inline;
+  z-index: 999;
+}
+#live1, #live2, #live3{
+  height: 40px;
+  width: auto;
+  padding-left: 10px;
+}
+@keyframes monochromeBlink {
+  0% {
+    filter:grayscale(100%);
+  }
+  50% {filter: grayscale(0%);
+  }
+  100%{
+    filter:grayscale(100%);
+  }
+}
+
+.lives{
+  position: absolute;
+  bottom: 2%;
+  left: 1%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+}
+.lives p{
+ padding-left: 40px;
+ padding-right: 20px;
+}
+.overlayhint{
+  display:none;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.5);
+  z-index: 1001;
+  flex-direction: column;
+}
+.lay{
+
+  padding-left: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  color: black;
+  position: absolute;
+  background-color: rgb(255, 255, 255,0.8);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 30vh;
+  width:50vw;
+  text-align: left;
+  z-index: 1001;
+}
+#testButton {
+  font-size: 16px;
+  background-color: transparent; 
+  cursor: pointer; 
+  z-index: 1001;
+}
+#imghint{
+  height: 40px;
+}
+.mobilebtn{
+  display: none;
+}
+b{
+  color:#e91e63;
+}
+@media screen and (max-width: 767px) {
+  .maintext{
+    width: 90%;
+    font-size: 88px;
+  }
+ .lay{
+  padding-left: 4%;
+  padding-right: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 18px;
+  color: black;
+  position: absolute;
+  background-color: rgb(255, 255, 255,0.8);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 40vh;
+  width:80vw;
+  text-align: left;
+  z-index: 1001;
+ }
+  .mobilebtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .btnmb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 120px;
+    background-color: #e91e63;
+    border-radius: 5px;
+    color: black;
+    font-weight: 700;
+    border: black 4px solid;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin-top: 20%;
+  }
   * {
     overflow: hidden;
   }
   body {
     overflow: hidden;
+   
+  }
+  .container2{
+    display: flex;
+    flex-direction:column;
+  }
+  .maintext2{
+    width: 80%;
+    text-align: center;
+    font-size: 50px;
   }
   .container {
     display: flex;
     align-items: center;
   }
-  .maintext {
-    font-size: 80px;
-  }
+  
   button {
     font-size: 12px;
+  }
+  #letters{
+    width: 87%;
+    text-align: justify;
+  }
+  #word-display{
+    padding-top: 20%;
+    width: 80%;
+    position:absolute;
+    top: 10%;
+  }
+.letter-button {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: transparent;
+}
+.anime{
+  padding-right: 35%;
+}
+.sheep{
+  bottom: 25%;
+  width: 70px;
+  height: auto;
+  z-index: 2;
+  position: absolute;
+  animation-delay: 10s;
+}
+.textgame{
+  justify-content:end;
+  width: 100%;
+  height: 70%;
+}
+.lives{
+  position: absolute;
+  bottom:14%;
+  left: 1%;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+}
+.gameover {
+  position: relative;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 20px;
+  color: white;
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 60vh;
+  width: 85vw;
+  text-align: center;
+  z-index: 1002;
+}
+#losegif, #wingif{
+height: 80px;
+width: auto;
+}
+.overlaylose,.overlaywin{
+  background-color: rgb(0, 0, 0,0.9);
+}
+.ufo{
+  height: 130px;
+  width: auto;
+}
+@keyframes moveAndRotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-77vh) rotate(360deg);
+  }
+}
+#message1{
+  line-height: 3;
+  width: 80%;
+  height: auto;
+  text-align: center;
+  word-wrap: break-word;
+}
+.level{
+  display: none;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mobilebtn{
+    display: none;
+  }
+  #word-display{
+    width: 50%;
+    top: 15%;
+    font-size: 40px;
+  }
+  #letters{
+    width: 50%;
+  }
+  .anime{
+    padding-right: 15%;
+  }
+  .textgame{
+    justify-content:end;
+    width: 100%;
+    height: 80%;
+  }
+  .gameover {
+    position: relative;
+    font-family: "Luckiest Guy", cursive;
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    height: 60vh;
+    width: 85vw;
+    text-align: center;
+    z-index: 1002;
+  }
+  #losegif, #wingif{
+  height: 80px;
+  width: auto;
+  }
+.reset{
+  font-size: 28px;
+  height: 70px;
+  width: 200px;
+}
+  .overlaylose,.overlaywin{
+    background-color: rgb(0, 0, 0,0.9);
+  }
+  .lives{
+    bottom: 6%;
+    font-size: 35px;
+  }
+  .sheep{
+    bottom: 8%;
   }
 }
