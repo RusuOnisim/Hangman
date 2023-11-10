@@ -10,7 +10,7 @@ Embark on an otherworldly word-guessing adventure with "Cosmic Codebreaker"! Cha
 ![image](https://i.imgur.com/l01KHZJ.png)
 
 ## Link to the game
-Link to our game : [Cosmic Codebreaker](https://rusuonisim.github.io/Hangman/)
+Link to the game : [Cosmic Codebreaker](https://rusuonisim.github.io/Hangman/)
 
 
 ## Technologies used
